@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;900&display=swap" rel="stylesheet" /><script src="./js/script.js"></script>
+    <title>HomePage</title>
+
+    <script src="libs/kore-no-conflict-start.js" type="text/javascript"></script>
+    <script src="libs/jquery.js" type="text/javascript"></script>
+    <script src="libs/jquery.tmpl.min.js" type="text/javascript"></script>
+    <script src="libs/jquery-ui.min.js" type="text/javascript"></script>
+<script src="libs/dompurify.js" type="text/javascript"></script>
+    <link href="libs/jquery-ui.min.css" rel="stylesheet"></link>
+    <script src="libs/moment.js" type="text/javascript"></script>
+    <script src="../libs/lodash.min.js"></script>
+    <script src="../libs/d3.v4.min.js"></script>
+    <script src="../libs/KoreGraphAdapter.js" type="text/javascript"></script>
+    <script src='../libs/anonymousassertion.js'></script>
+    <script src="../kore-bot-sdk-client.js"></script>	
+
+<!-- Uncomment these lines for amazon polly -->
+<!-- <script src="../plugins/aws-sdk-2.668.0.min.js"></script>
+<script src="../plugins/kore-aws-polly.js" type="text/javascript"></script> -->
+    
+<script src="../libs/perfect-scrollbar.js" type="text/javascript"></script>
+    <script src="kore-widgets.js" type="text/javascript"></script><!--widget sdk file-->
+    <script src="chatWindow.js" type="text/javascript"></script>
+    <script src="libs/jquery.daterangepicker.js" type="text/javascript"></script>
+    <link href="libs/daterangepicker.css" rel="stylesheet"></link>
+    <script src="libs/jquery-clockpicker.js" type="text/javascript"></script>
+    <link href="libs/jquery-clockpicker.css" rel="stylesheet"></link>
+    <link href="../libs/kore-pickers.css" rel="stylesheet"></link>
+    <script src="../libs/kore-pickers.js" type="text/javascript"></script>
+    <script src="../libs/emoji.js" type="text/javascript"></script>
+    <script src="../libs/recorder.js" type="text/javascript"></script>
+    <script src="../libs/recorderWorker.js" type="text/javascript"></script>
+    <link href="kore-widgets.css" rel="stylesheet"></link><!--widget sdk file-->
+    <link href="chatWindow.css" rel="stylesheet"></link>
+    <link href="../libs/emojione.sprites.css" rel="stylesheet"></link>
+    <link href="../libs/purejscarousel.css" rel="stylesheet"></link>
+    <link href="../libs/prefect-scrollbar.css" rel="stylesheet"></link>
+    <script src="../libs/purejscarousel.js" type="text/javascript"></script>
+    <script src="custom/customTemplate.js" type="text/javascript"></script>
+    <link href="custom/customTemplate.css" rel="stylesheet"></link>
+    <script src="../libs/ie11CustomProperties.js"></script>
+    <!-- <script type="text/javascript" src="libs/loader.js"></script>  -->
+
+    <!-- Uncomment these lines for Google Speech. -->
+    <!-- <script type="text/javascript" src="../libs/speech/app.js"></script>
+        <script type="text/javascript" src="../libs/speech/key.js"></script>
+        <script type="text/javascript" src="../libs/client_api.js"></script> -->
+        
+    <script src="kore-config.js" type="text/javascript"></script>
+    <script src="kore-widgets-config.js" type="text/javascript"></script>
+    <script src="kore-widgets-chat-main.js" type="text/javascript"></script>
+    <script src="libs/kore-no-conflict-end.js" type="text/javascript"></script>
+
+    <link rel='stylesheet' href='https://bots.kore.ai/webclient/UI/dist/kore-ai-sdk.min.css'></link>
+    <script src='https://bots.kore.ai/api/platform/websdkjs/9c16487c2ca54b0cb35331ba87b6032192f61a255cac493ca5fa0d9ac42cf3d1sta8'></script>
+    <script>KoreSDK.show(KoreSDK.chatConfig);</script>
+
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo">
+            <p><img src="data:image/png;base64,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" 
+                alt="" width="50" height="64">FLIGHT MANAGEMENT</p>
+        </div>
+        <div class="links">
+            <button onclick="visibileUserForm()"><i class="bi bi-airplane-fill"></i>+</button>
+        </div>
+    </nav><br><br><br><br><br>
+    <div class="links">
+    &nbsp;&nbsp;<button><i class="bi bi-airplane-engines-fill"></i><a href="./route.html" class="route"> CLICK HERE TO ADD ROUTES</a></button>
+    </div>
+    <div class="container-1">
+    <div id="root" class="users-container">
+
+    </div>
+    
+    <form id="addForm">
+        <div class='form'>
+        <input type="text" placeholder="Flight Number" id="flightnum"><br>
+        <input type="number" placeholder="Seating Capacity" id="capacity"><br>
+        <div class="input">
+            <select id="presence">
+                <option value="Availble">Availble</option>
+                <option value="Under Maintenance">Under Maintenance</option>
+                <option value="Not Available">Not Available</option>
+            </select>
+        </div>
+        <button class="btn" onclick="addFlight()">Add Flight</button>
+        </div>
+    </form>
+    <form id="updateForm">
+        <div class='form'>
+        <input type="text" placeholder="Flight Number" id="upflightnum"><br>
+        <input type="number" placeholder="Seating Capacity" id="upcapacity"><br>
+        <div class="input">
+            <select id="uppresence">
+                <option value="Availble">Availble</option>
+                <option value="Under Maintenance">Under Maintenance</option>
+                <option value="Not Available">Not Available</option>
+            </select>
+        </div><br>
+        <button class="btn" onclick="updateFlight()">Update Flight</button>
+        </div>
+    </form>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</html>
